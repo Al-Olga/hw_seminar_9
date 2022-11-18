@@ -1,8 +1,19 @@
 ﻿// Показать натуральные числа от M до N, N и M заданы
+// Найти сумму элементов от M до N, N и M заданы
+
+double SumElem (int [] array) 
+{
+    double sum=0;
+    for (int i=0; i<array.Length; i++) 
+        sum=sum+array[i];
+    return sum;
+}
+
+//заполняем массив натуральных чисел с заданным диапазоном
 void EnterArray (int[] array, int min)
 {
     for (int i=0; i<array.Length; i++)
-        array[i]=min+i;
+        array[i]=min+i; 
 }
 
 void PrintArray(int[] array)
@@ -37,5 +48,10 @@ if (kol_numb!=0)
     EnterArray (array_numb, min);
     Console.Write("Натуральный ряд: ");
     PrintArray (array_numb);
+    Console.WriteLine($"Сумма элементов = {SumElem (array_numb)}");    
 }
-else Console.WriteLine("Задан неверный диапазон для ряда натуральных чисел");    
+else 
+{
+    Console.WriteLine("Задан неверный диапазон для ряда натуральных чисел");    
+    Console.WriteLine($"Сумма элементов = {m}");
+}
